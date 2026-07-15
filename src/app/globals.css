@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fbf6ec;
+  --foreground: #2a1810;
+
+  --color-cream: #fbf6ec;
+  --color-cream-soft: #f4ead4;
+  --color-cream-deep: #ecdfc0;
+
+  --color-ink: #2a1810;
+  --color-ink-soft: #5c4636;
+
+  --color-maroon-900: #3a0d18;
+  --color-maroon-800: #4a1220;
+  --color-maroon-700: #5c1626;
+  --color-maroon-600: #6f1c2e;
+  --color-maroon-500: #862338;
+
+  --color-gold-300: #ecd8a0;
+  --color-gold-400: #ddc17c;
+  --color-gold-500: #c9a24b;
+  --color-gold-600: #a9822f;
+  --color-gold-700: #8a6a26;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-cream: var(--color-cream);
+  --color-cream-soft: var(--color-cream-soft);
+  --color-cream-deep: var(--color-cream-deep);
+
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+
+  --color-maroon-900: var(--color-maroon-900);
+  --color-maroon-800: var(--color-maroon-800);
+  --color-maroon-700: var(--color-maroon-700);
+  --color-maroon-600: var(--color-maroon-600);
+  --color-maroon-500: var(--color-maroon-500);
+
+  --color-gold-300: var(--color-gold-300);
+  --color-gold-400: var(--color-gold-400);
+  --color-gold-500: var(--color-gold-500);
+  --color-gold-600: var(--color-gold-600);
+  --color-gold-700: var(--color-gold-700);
+
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-manrope);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: var(--color-gold-400);
+  color: var(--color-maroon-900);
+}
+
+.font-serif-display {
+  font-family: var(--font-serif), "Georgia", serif;
+}
+
+/* Subtle repeating diamond texture used as a section backdrop */
+.bg-ornate {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(201, 162, 75, 0.18) 1px, transparent 0);
+  background-size: 22px 22px;
+}
+
+.gold-divider {
+  position: relative;
+  width: 72px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-gold-500), transparent);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(120deg, #ddc17c, #c9a24b 45%, #8a6a26);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.container-lux {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-lux {
+    padding-inline: 2.5rem;
+  }
+}
+
+.card-shadow {
+  box-shadow: 0 10px 40px -12px rgba(58, 13, 24, 0.18);
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
