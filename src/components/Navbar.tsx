@@ -15,10 +15,20 @@ const links = [
   { href: "/contact", label: "Contact" },
 ];
 
+// Maps Home-page preview section ids to the nav link they should light up.
+const sectionToHref: Record<string, string> = {
+  "nav-home": "/",
+  "nav-about": "/about",
+  "nav-facilities": "/facilities",
+  "nav-gallery": "/gallery",
+  "nav-menu": "/menu",
+};
+
 export default function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [activeSectionHref, setActiveSectionHref] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -26,6 +36,34 @@ export default function Navbar() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // On the Home page, highlight whichever preview section is currently in view.
+  useEffect(() => {
+    if (pathname !== "/") return;
+
+    const elements = Object.keys(sectionToHref)
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null);
+
+    if (elements.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((entry) => entry.isIntersecting);
+        if (visible.length === 0) return;
+        const mostVisible = visible.reduce((a, b) =>
+          a.intersectionRatio > b.intersectionRatio ? a : b
+        );
+        setActiveSectionHref(sectionToHref[mostVisible.target.id] ?? null);
+      },
+      { rootMargin: "-45% 0px -45% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, [pathname]);
+
+  const effectiveActiveHref = pathname === "/" ? activeSectionHref ?? "/" : pathname;
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 sm:pt-5">
@@ -50,7 +88,7 @@ export default function Navbar() {
 
         <ul className="hidden md:flex items-center gap-1">
           {links.map((link) => {
-            const active = pathname === link.href;
+            const active = effectiveActiveHref === link.href;
             return (
               <li key={link.href}>
                 <Link
@@ -102,7 +140,7 @@ export default function Navbar() {
           >
             <ul className="flex flex-col gap-1 p-3">
               {links.map((link) => {
-                const active = pathname === link.href;
+                const active = effectiveActiveHref === link.href;
                 return (
                   <li key={link.href}>
                     <Link

@@ -10,7 +10,7 @@ import { facilities } from "@/data/facilities";
 export default function FacilitiesPreview() {
   const preview = facilities.slice(0, 6);
   return (
-    <section className="bg-cream-soft py-20 md:py-28">
+    <section id="nav-facilities" className="bg-cream-soft py-20 md:py-28">
       <div className="container-lux">
         <SectionHeading
           eyebrow="What We Offer"

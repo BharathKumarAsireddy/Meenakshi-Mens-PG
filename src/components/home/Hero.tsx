@@ -13,7 +13,7 @@ const badges = [
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-maroon-900 text-cream">
+    <section id="nav-home" className="relative overflow-hidden bg-maroon-900 text-cream">
       <Image
         src="/images/exterior-front.jpeg"
         alt="Meenakshi Men's PG building exterior"

@@ -12,7 +12,7 @@ const points = [
 
 export default function AboutPreview() {
   return (
-    <section className="bg-cream py-20 md:py-28">
+    <section id="nav-about" className="bg-cream py-20 md:py-28">
       <div className="container-lux grid grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-16">
         <AnimatedSection direction="right">
           <div className="relative aspect-4/5 w-full overflow-hidden rounded-2xl card-shadow">

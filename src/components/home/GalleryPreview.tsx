@@ -7,7 +7,7 @@ import { galleryItems } from "@/data/gallery";
 
 export default function GalleryPreview() {
   return (
-    <section className="bg-cream py-20 md:py-28">
+    <section id="nav-gallery" className="bg-cream py-20 md:py-28">
       <div className="container-lux">
         <SectionHeading
           eyebrow="Take a Look Around"

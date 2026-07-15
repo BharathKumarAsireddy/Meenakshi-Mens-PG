@@ -28,8 +28,7 @@ export default function MenuPreview() {
   const today = weeklyMenu[dayIndex];
 
   return (
-    <section className="bg-maroon-900 py-20 text-cream md:py-28">
-      <div className="absolute inset-0" />
+    <section id="nav-menu" className="relative bg-maroon-900 py-20 text-cream md:py-28">
       <div className="container-lux relative">
         <SectionHeading
           eyebrow="Fresh Every Day"
