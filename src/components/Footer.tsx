@@ -97,11 +97,14 @@ export default function Footer() {
           <ul className="mt-4 space-y-4">
             <li className="flex items-start gap-3 text-sm text-cream-soft/75">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold-400" />
-              <span>123 Temple Street, Near City Centre, Hyderabad, Telangana</span>
+              <span>Sai Vaibhav Colony, Indresham, Telangana</span>
             </li>
-            <li className="flex items-center gap-3 text-sm text-cream-soft/75">
-              <Phone className="h-4 w-4 shrink-0 text-gold-400" />
-              <a href="tel:+910000000000">+91 00000 00000</a>
+            <li className="flex items-start gap-3 text-sm text-cream-soft/75">
+              <Phone className="mt-0.5 h-4 w-4 shrink-0 text-gold-400" />
+              <span className="flex flex-col">
+                <a href="tel:+919121151001" className="hover:text-gold-300">+91 91211 51001</a>
+                <a href="tel:+919390873344" className="hover:text-gold-300">+91 93908 73344</a>
+              </span>
             </li>
             <li className="flex items-center gap-3 text-sm text-cream-soft/75">
               <Mail className="h-4 w-4 shrink-0 text-gold-400" />

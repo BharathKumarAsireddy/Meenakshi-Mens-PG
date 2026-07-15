@@ -1,6 +1,6 @@
 export type GalleryItem = {
   title: string;
-  category: "Rooms" | "Dining" | "Common Areas" | "Exteriors";
+  category: "Rooms" | "Dining" | "Common Areas" | "Exteriors" | "Highlights";
   gradient: string;
   image?: string;
   tall?: boolean;
@@ -14,6 +14,13 @@ export const galleryItems: GalleryItem[] = [
     category: "Exteriors",
     gradient: "from-maroon-700 via-maroon-600 to-gold-600",
     image: "/images/exterior-front.jpeg",
+    tall: true,
+  },
+  {
+    title: "Meenakshi Men's PG — Info Card",
+    category: "Highlights",
+    gradient: "from-maroon-900 via-maroon-700 to-gold-600",
+    image: "/images/pg-info-card.jpeg",
     tall: true,
   },
   {

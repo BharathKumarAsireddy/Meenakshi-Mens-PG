@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import GalleryGrid from "@/components/GalleryGrid";
 import { galleryItems } from "@/data/gallery";
 
-const categories = ["All", "Rooms", "Dining", "Common Areas", "Exteriors"] as const;
+const categories = ["All", "Highlights", "Rooms", "Dining", "Common Areas", "Exteriors"] as const;
 
 export default function GalleryFilterGrid() {
   const [active, setActive] = useState<(typeof categories)[number]>("All");
